@@ -6,11 +6,185 @@
     <title>Запись на занятие</title>
 </head>
 <body>
-    <p>Сегодня</p>
-    <p id = "day"></p>
-    <p>Преподаватель</p>
-    <p id = "name_prepod"></p>
-    <a href="https://jek659.github.io/tminiappsform/now_group1.html">Группа 1</a>
-    <a href="https://jek659.github.io/tminiappsform/now_group2.html">Группа 2</a>
+    <h1>Дата</h1>
+    <p id = "now_date"> </p>
+    <h1>Преподаватель</h1>
+    <p id = "name_prof"></p>
+    <h2>Ведомость</h2>
+    <label for="group_number">Группа:</label>
+    <select id="group_number" name="group_number" onchange="handleFruitChange()">
+      <option value="grp1">Группа 1</option>
+      <option value="grp2">Группа 2</option>
+      <option value="grp3">Группа 3</option>
+    </select>
+    <table>
+        <thead>
+          <tr>
+            <th>№</th>
+            <th>Имя Фамилия</th>
+            <th>Отработка</th>
+            <th>За какое число</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><input type = "text" id = "st1" name = "st1"></td>
+            <td><input type = "checkbox" id ="st1_otr" name = "st1_otr"></td>
+            <td><input type = "date" id = "st1_otr_date" name = "st1_otr_date" disabled> </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><input type = "text" id = "st2" name = "st2"></td>
+            <td><input type = "checkbox" id ="st2_otr" name = "st2_otr"></td>
+            <td><input type = "date" id = "st2_otr_date" name = "st2_otr_date" disabled> </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><input type = "text" id = "st3" name = "st3"></td>
+            <td><input type = "checkbox" id ="st3_otr" name = "st3_otr"></td>
+            <td><input type = "date" id = "st3_otr_date" name = "st3_otr_date" disabled> </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><input type = "text" id = "st4" name = "st4"></td>
+            <td><input type = "checkbox" id ="st4_otr" name = "st4_otr"></td>
+            <td><input type = "date" id = "st4_otr_date" name = "st4_otr_date" disabled> </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><input type = "text" id = "st5" name = "st5"></td>
+            <td><input type = "checkbox" id ="st5_otr" name = "st5_otr"></td>
+            <td><input type = "date" id = "st5_otr_date" name = "st5_otr_date" disabled> </td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td><input type = "text" id = "st6" name = "st6"></td>
+            <td><input type = "checkbox" id ="st6_otr" name = "st6_otr"></td>
+            <td><input type = "date" id = "st6_otr_date" name = "st6_otr_date" disabled> </td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td><input type = "text" id = "st7" name = "st7"></td>
+            <td><input type = "checkbox" id ="st7_otr" name = "st7_otr"></td>
+            <td><input type = "date" id = "st7_otr_date" name = "st7_otr_date" disabled> </td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td><input type = "text" id = "st8" name = "st8"></td>
+            <td><input type = "checkbox" id ="st8_otr" name = "st8_otr"></td>
+            <td><input type = "date" id = "st8_otr_date" name = "st8_otr_date" disabled> </td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td><input type = "text" id = "st9" name = "st9"></td>
+            <td><input type = "checkbox" id ="st9_otr" name = "st9_otr"></td>
+            <td><input type = "date" id = "st9_otr_date" name = "st9_otr_date" disabled> </td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td><input type = "text" id = "st10" name = "st10"></td>
+            <td><input type = "checkbox" id ="st10_otr" name = "st10_otr"></td>
+            <td><input type = "date" id = "st10_otr_date" name = "st10_otr_date" disabled> </td>
+          </tr>
+        </tbody>
+      </table>
+      <script>
+        let days = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
+        var now = new Date();
+        const data_show = document.getElementById("now_date");
+        data_show.innerHTML = String(now.getDate())+"."+ String(now.getMonth()+1)+"."+String(now.getFullYear())+" " + days[now.getDay()]
+       const Checkbox1 = document.getElementById("st1_otr");
+       const DateSelector1 = document.getElementById("st1_otr_date");
+       Checkbox1.addEventListener(
+                                  "change",
+                                  (event) => {
+                                               DateSelector1.disabled = !event.target.checked;
+                                             },
+                                   false,
+                                );
+       const Checkbox2 = document.getElementById("st2_otr");
+       const DateSelector2 = document.getElementById("st2_otr_date");
+       Checkbox2.addEventListener(
+                                  "change",
+                                  (event) => {
+                                               DateSelector2.disabled = !event.target.checked;
+                                             },
+                                   false,
+                                );
+       const Checkbox3 = document.getElementById("st3_otr");
+       const DateSelector3 = document.getElementById("st3_otr_date");
+       Checkbox3.addEventListener(
+                                  "change",
+                                  (event) => {
+                                               DateSelector3.disabled = !event.target.checked;
+                                             },
+                                   false,
+                                );
+       const Checkbox4 = document.getElementById("st4_otr");
+       const DateSelector4 = document.getElementById("st4_otr_date");
+       Checkbox4.addEventListener(
+                                  "change",
+                                  (event) => {
+                                               DateSelector4.disabled = !event.target.checked;
+                                             },
+                                   false,
+                                );
+       const Checkbox5 = document.getElementById("st5_otr");
+       const DateSelector5 = document.getElementById("st5_otr_date");
+       Checkbox5.addEventListener(
+                                  "change",
+                                  (event) => {
+                                               DateSelector5.disabled = !event.target.checked;
+                                             },
+                                   false,
+                                );
+       const Checkbox6 = document.getElementById("st6_otr");
+       const DateSelector6 = document.getElementById("st6_otr_date");
+       Checkbox6.addEventListener(
+                                  "change",
+                                  (event) => {
+                                               DateSelector6.disabled = !event.target.checked;
+                                             },
+                                   false,
+                                );
+       const Checkbox7 = document.getElementById("st7_otr");
+       const DateSelector7 = document.getElementById("st7_otr_date");
+       Checkbox7.addEventListener(
+                                  "change",
+                                  (event) => {
+                                               DateSelector7.disabled = !event.target.checked;
+                                             },
+                                   false,
+                                );
+       const Checkbox8 = document.getElementById("st8_otr");
+       const DateSelector8 = document.getElementById("st8_otr_date");
+       Checkbox8.addEventListener(
+                                  "change",
+                                  (event) => {
+                                               DateSelector8.disabled = !event.target.checked;
+                                             },
+                                   false,
+                                );
+        const Checkbox9 = document.getElementById("st9_otr");
+       const DateSelector9 = document.getElementById("st9_otr_date");
+       Checkbox9.addEventListener(
+                                  "change",
+                                  (event) => {
+                                               DateSelector9.disabled = !event.target.checked;
+                                             },
+                                   false,
+                                );
+        const Checkbox10 = document.getElementById("st10_otr");
+       const DateSelector10 = document.getElementById("st10_otr_date");
+       Checkbox10.addEventListener(
+                                  "change",
+                                  (event) => {
+                                               DateSelector10.disabled = !event.target.checked;
+                                             },
+                                   false,
+                                );
+        
+      </script>
 </body>
 </html>
